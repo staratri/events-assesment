@@ -154,6 +154,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$mobile-screen: 650px;
+
 .events-page {
     max-width: 1100px;
     margin: auto;
@@ -189,9 +191,16 @@ export default {
       .form {
         display: flex;
         justify-content: space-between;
+        @media (max-width: $mobile-screen) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
         img {
           width: 150px;
           height: 150px;
+          @media (max-width: $mobile-screen) {
+            margin-bottom: $spacer/2;
+          }
         }
         form {
           flex: 1;
@@ -199,12 +208,22 @@ export default {
         .form-group {
           display: flex;
           flex: 2;
+          margin-left: $spacer/2;
+          flex-wrap: wrap;
           justify-content: space-between;
           position: relative;
+          @media (max-width: $mobile-screen) {
+            margin-bottom: 0;
+          }
           label {
             flex: 1;
             text-align: end;
             margin-right: $spacer/3;
+            @media (max-width: $mobile-screen) {
+              margin-bottom: 0;
+              text-align: start;
+
+            }
           }
           input, select {
             min-width: 60%;
@@ -224,7 +243,11 @@ export default {
       .form-actions {
         margin-top: $spacer/2;
         display: flex;
+        flex-wrap: wrap;
         justify-content: flex-end;
+        @media (max-width: $mobile-screen) {
+          justify-content: center;
+        }
         .button-wrapper {
           background: #1484c5;
           padding: $spacer/4 $spacer/2;

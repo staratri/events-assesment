@@ -28,6 +28,10 @@ export default {
   display: flex;
   margin-top: $spacer;
   flex-wrap: wrap;
+  @media (max-width: 550px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .no-results {
